@@ -38,8 +38,15 @@ jobs:
     name: 编译OpenWrt固件
     if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
-
     steps:
+    - name: Maximize Build Space
+      uses: easimon/maximize-build-space@master
+      with:
+        root-reserve-mb: 5120
+        swap-size-mb: 512
+        remove-dotnet: 'true'
+        remove-android: 'true'
+
     - name: 校验本地文件
       uses: actions/checkout@main
 
