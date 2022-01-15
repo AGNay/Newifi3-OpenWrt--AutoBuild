@@ -82,7 +82,7 @@ EOF
 cat >> .config <<EOF
 CONFIG_TARGET_ramips=y
 CONFIG_TARGET_ramips_mt7621=y
-CONFIG_TARGET_ramips_mt7621_DEVICE_d-team_newifi-d2=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_gehua_ghl-r-001=y
 EOF
 
 # 无线驱动(开源)
@@ -119,17 +119,17 @@ EOF
 # CONFIG_PACKAGE_kmod-fs-nfs-common=y
 # CONFIG_PACKAGE_kmod-fs-nfs-v3=y
 # CONFIG_PACKAGE_kmod-fs-nfs-v4=y
-# CONFIG_PACKAGE_kmod-fs-ntfs=y
-# CONFIG_PACKAGE_kmod-fs-squashfs=y
+CONFIG_PACKAGE_kmod-fs-ntfs=y
+CONFIG_PACKAGE_kmod-fs-squashfs=y
 # EOF
 
 # USB3.0支持:
 # cat >> .config <<EOF
-# CONFIG_PACKAGE_kmod-usb-ohci=y
+CONFIG_PACKAGE_kmod-usb-ohci=y
 # CONFIG_PACKAGE_kmod-usb-ohci-pci=y
 # CONFIG_PACKAGE_kmod-usb2=y
 # CONFIG_PACKAGE_kmod-usb2-pci=y
-# CONFIG_PACKAGE_kmod-usb3=y
+CONFIG_PACKAGE_kmod-usb3=y
 # EOF
 
 # 第三方插件选择:
@@ -170,7 +170,7 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-mtwifi=n
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-easymesh=n
-CONFIG_PACKAGE_luci-app-smartdns=y
+#CONFIG_PACKAGE_luci-app-smartdns=y
 #CONFIG_PACKAGE_luci-app-webadmin=n #Web管理页面设置
 #CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_PACKAGE_luci-app-vlmcsd=n #KMS激活服务器
@@ -186,11 +186,11 @@ CONFIG_PACKAGE_automount=y
 CONFIG_PACKAGE_coreutils-base64=y
 CONFIG_PACKAGE_luci-app-commands=y
 #CONFIG_PACKAGE_luci-app-jd-dailybonus=y
-CONFIG_PACKAGE_luci-app-nps=y
-CONFIG_PACKAGE_luci-app-watchcat=y
+#CONFIG_PACKAGE_luci-app-nps=y
+#CONFIG_PACKAGE_luci-app-watchcat=y
 #CONFIG_PACKAGE_luci-app-zerotier=y
 #CONFIG_PACKAGE_luci-app-sfe=n #高通开源的 Shortcut FE 转发加速引擎
-#CONFIG_PACKAGE_luci-app-flowoffload=y #开源 Linux Flow Offload 驱动
+CONFIG_PACKAGE_luci-app-flowoffload=y #开源 Linux Flow Offload 驱动
 #CONFIG_PACKAGE_luci-app-haproxy-tcp is not set #Haproxy负载均衡
 #CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
 #CONFIG_PACKAGE_luci-app-transmission is not set #TR离线下载
@@ -201,13 +201,13 @@ CONFIG_PACKAGE_luci-app-watchcat=y
 #CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 #CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 #CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
-#CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
+CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS=y
 #CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go=y
 # CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2音频接收服务器
 # CONFIG_PACKAGE_luci-app-music-remote-center is not set #PCHiFi数字转盘遥控
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
-#CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
+# CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
 #
 # VPN相关插件(禁用):
 #
@@ -220,7 +220,8 @@ CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS=y
 # 文件共享相关(禁用):
 #
 # CONFIG_PACKAGE_luci-app-minidlna is not set #miniDLNA服务
-# CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
+#FTP 服务器
+CONFIG_PACKAGE_luci-app-vsftpd=y
 # CONFIG_PACKAGE_luci-app-samba is not set #网络共享
 # CONFIG_PACKAGE_autosamba is not set #网络共享
 # CONFIG_PACKAGE_samba36-server is not set #网络共享
@@ -228,13 +229,13 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-theme-atmaterial=y
+#CONFIG_PACKAGE_luci-theme-atmaterial=y
 #CONFIG_PACKAGE_luci-theme-bootstrap=y
 #CONFIG_PACKAGE_luci-theme-argon_new=y
 #CONFIG_PACKAGE_luci-theme-argon
 #CONFIG_PACKAGE_luci-theme-netgear=y
 #CONFIG_PACKAGE_luci-theme-edge=y
-CONFIG_PACKAGE_luci-theme-material=y
+#CONFIG_PACKAGE_luci-theme-material=y
 EOF
 
 # 常用软件包:
