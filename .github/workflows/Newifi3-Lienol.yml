@@ -2,6 +2,16 @@
 name: Newifi3-Lienol
 
 on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      Tempoary_IP:
+        description: '临时修改 IP 地址 [可选]'
+        default: ''
+      Tempoary_CONFIG:
+        description: '配置文件 [可选]'
+        default: ''
+        
 # 定时触发
 #  schedule:
 #   - cron: 0 19 * * 5
