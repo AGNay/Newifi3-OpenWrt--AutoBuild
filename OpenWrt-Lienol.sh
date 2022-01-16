@@ -78,7 +78,7 @@ EOF
 cat >> .config <<EOF
 CONFIG_TARGET_ramips=y
 CONFIG_TARGET_ramips_mt7621=y
-CONFIG_TARGET_ramips_mt7621_DEVICE_d-team_newifi-d2=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_gehua_ghl-r-001=y
 EOF
 
 # 无线驱动(开源)
@@ -99,20 +99,20 @@ EOF
 # 多文件系统支持:
 # cat >> .config <<EOF
 # CONFIG_PACKAGE_kmod-fs-nfs=y
-# CONFIG_PACKAGE_kmod-fs-nfs-common=y
+CONFIG_PACKAGE_kmod-fs-nfs-common=y
 # CONFIG_PACKAGE_kmod-fs-nfs-v3=y
 # CONFIG_PACKAGE_kmod-fs-nfs-v4=y
-# CONFIG_PACKAGE_kmod-fs-ntfs=y
-# CONFIG_PACKAGE_kmod-fs-squashfs=y
+CONFIG_PACKAGE_kmod-fs-ntfs=y
+CONFIG_PACKAGE_kmod-fs-squashfs=y
 # EOF
 
 # USB3.0支持:
 # cat >> .config <<EOF
-# CONFIG_PACKAGE_kmod-usb-ohci=y
-# CONFIG_PACKAGE_kmod-usb-ohci-pci=y
-# CONFIG_PACKAGE_kmod-usb2=y
-# CONFIG_PACKAGE_kmod-usb2-pci=y
-# CONFIG_PACKAGE_kmod-usb3=y
+CONFIG_PACKAGE_kmod-usb-ohci=y
+CONFIG_PACKAGE_kmod-usb-ohci-pci=y
+CONFIG_PACKAGE_kmod-usb2=y
+CONFIG_PACKAGE_kmod-usb2-pci=y
+CONFIG_PACKAGE_kmod-usb3=y
 # EOF
 
 # 第三方插件选择:
@@ -122,18 +122,18 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
-CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
+#CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
 #CONFIG_PACKAGE_AdGuardHome=y
 EOF
 
 # ShadowsocksR插件:
 #cat >> .config <<EOF
-#CONFIG_PACKAGE_luci-app-ssr-plus=n
+CONFIG_PACKAGE_luci-app-ssr-plus=n
 #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=n
 #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=n
 #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=n
 #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=n
-#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=n
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=n
 #EOF
 
 # Passwall插件:
@@ -152,26 +152,26 @@ EOF
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
 #CONFIG_PACKAGE_luci-app-guest-wifi=y
-CONFIG_PACKAGE_luci-app-ttyd=y
+#CONFIG_PACKAGE_luci-app-ttyd=y
 #CONFIG_PACKAGE_luci-app-easymesh=y
 #CONFIG_PACKAGE_luci-app-smartdns=y
-#CONFIG_PACKAGE_luci-app-webadmin=n #Web管理页面设置
-#CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
+CONFIG_PACKAGE_luci-app-webadmin=n #Web管理页面设置
+CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_PACKAGE_luci-app-vlmcsd=n #KMS激活服务器
 #CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
 #CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
 #CONFIG_PACKAGE_luci-app-accesscontrol=y #上网时间控制
 CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
-CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
+#CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 #CONFIG_PACKAGE_luci-app-nlbwmon=n #宽带流量监控
 #CONFIG_PACKAGE_luci-app-wrtbwmon=y
 CONFIG_PACKAGE_automount=y
 CONFIG_PACKAGE_coreutils-base64=y
-CONFIG_PACKAGE_luci-app-commands=y
-#CONFIG_PACKAGE_luci-app-jd-dailybonus=y
-CONFIG_PACKAGE_luci-app-nps=y
-CONFIG_PACKAGE_luci-app-watchcat=y
+#CONFIG_PACKAGE_luci-app-commands=y
+CONFIG_PACKAGE_luci-app-jd-dailybonus=y
+#CONFIG_PACKAGE_luci-app-nps=y
+#CONFIG_PACKAGE_luci-app-watchcat=y
 #CONFIG_PACKAGE_luci-app-zerotier=y
 #CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 CONFIG_PACKAGE_luci-app-turboacc=y #开源 Linux Flow Offload 驱动
@@ -192,7 +192,7 @@ CONFIG_PACKAGE_luci-app-turboacc=y #开源 Linux Flow Offload 驱动
 # CONFIG_PACKAGE_luci-app-music-remote-center is not set #PCHiFi数字转盘遥控
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
 #CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
-#
+CONFIG_PACKAGE_luciapp-verysync=y
 # VPN相关插件(禁用):
 #
 # CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
@@ -204,7 +204,8 @@ CONFIG_PACKAGE_luci-app-turboacc=y #开源 Linux Flow Offload 驱动
 # 文件共享相关(禁用):
 #
 # CONFIG_PACKAGE_luci-app-minidlna is not set #miniDLNA服务
-# CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
+#FTP 服务器
+CONFIG_PACKAGE_luci-app-vsftpd=y
 # CONFIG_PACKAGE_luci-app-samba is not set #网络共享
 # CONFIG_PACKAGE_autosamba is not set #网络共享
 # CONFIG_PACKAGE_samba36-server is not set #网络共享
@@ -212,24 +213,24 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-theme-atmaterial=y
+#CONFIG_PACKAGE_luci-theme-atmaterial=y
 #CONFIG_PACKAGE_luci-theme-bootstrap=y
 #CONFIG_PACKAGE_luci-theme-argon_new=y
 #CONFIG_PACKAGE_luci-theme-argon
 #CONFIG_PACKAGE_luci-theme-netgear=y
 #CONFIG_PACKAGE_luci-theme-edge=y
-CONFIG_PACKAGE_luci-theme-material=y
+#CONFIG_PACKAGE_luci-theme-material=y
 EOF
 
 # 常用软件包:
 #cat >> .config <<EOF
-#CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_curl=y
 #CONFIG_PACKAGE_htop=y
 #CONFIG_PACKAGE_nano=y
 #CONFIG_PACKAGE_screen=y
 #CONFIG_PACKAGE_tree=y
 #CONFIG_PACKAGE_vim-fuller=y
-#CONFIG_PACKAGE_wget=y
+CONFIG_PACKAGE_wget=y
 #EOF
 
 # 其他软件包:
